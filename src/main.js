@@ -1,12 +1,13 @@
 import { createApp } from 'vue'
-import './index.css'
 import App from './App.vue'
-import { OhVueIcon, addIcons } from "oh-vue-icons";
+import router from './router'
 import { FaFlag, RiZhihuFill } from "oh-vue-icons/icons";
-import { IoTrash } from "oh-vue-icons/icons";
 
+import './index.css'
+
+const app = createApp(App)
+
+app.use(router)
+
+app.mount('#app')
 addIcons(FaFlag, RiZhihuFill);
-
-const app = createApp(App);
-app.component("v-icon", OhVueIcon);
-app.mount("#app");
