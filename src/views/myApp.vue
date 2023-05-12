@@ -32,15 +32,16 @@ function removeTodo(todo) {
 </script>
 
 <template>
-  <div class="container mx-auto bg-gray-200 rounded-xl shadow border p-8 m-10">
+  <div class="container mx-auto bg-gray-200 rounded-xl shadow border px-8 m-10">
     <div class="text-center">
-      <h1 class="text-3xl font-bold pb-4">List Kegiatan</h1>
+      <h1 class="text-3xl font-bold py-10">List Kegiatan</h1>
     </div>
     <div class="tambah">
       <form @submit.prevent="addTodo">
-        <input class="shadow-lg rounded-md border pl-2 pr-2" v-model="newTodo">
-        <br>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded px-3 mt-5 text-xl">Add New</button>
+        <div class="text-center">
+          <input class="shadow-lg rounded-md border p-2 block w-full" v-model="newTodo">
+        </div>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded mt-5 text-xl">Add New</button>
       </form>
     </div>
     <ul>
@@ -53,9 +54,12 @@ function removeTodo(todo) {
       <br>
       <br>
     </ul>
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" @click="hideCompleted = !hideCompleted">
-      {{ hideCompleted ? 'Show All' : ' not Finished Task' }}
-    </button>
+    <div class="mb-10">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2.5 px-4 border border-blue-700 rounded" @click="hideCompleted = !hideCompleted">
+        {{ hideCompleted ? 'Show All' : ' not Finished Task' }}
+      </button>
+
+    </div>
   </div>
 </template>
 
